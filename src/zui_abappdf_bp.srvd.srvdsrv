@@ -1,0 +1,4 @@
+@EndUserText.label: 'ABAPpdf boarding pass demo'
+define service ZUI_ABAPPDF_BP {
+  expose ZC_ABAPPDF_BP_BOOKING as Booking;
+}

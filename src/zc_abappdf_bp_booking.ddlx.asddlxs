@@ -1,0 +1,57 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+  typeName: 'Booking',
+  typeNamePlural: 'Bookings',
+  title: { value: 'passenger_name' }
+}
+annotate view ZC_ABAPPDF_BP_BOOKING with
+{
+  @UI.facet: [{
+    id: 'Booking',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: 'Booking',
+    position: 10
+  }]
+  @UI.lineItem: [{ position: 10, label: 'Travel' }]
+  @UI.identification: [{ position: 10, label: 'Travel' }]
+  @UI.selectionField: [{ position: 10 }]
+  travel_id;
+
+  @UI.lineItem: [{ position: 20, label: 'Booking' }]
+  @UI.identification: [{ position: 20, label: 'Booking' }]
+  booking_id;
+
+  @UI.lineItem: [{ position: 30, label: 'Passenger' }]
+  @UI.identification: [{ position: 30, label: 'Passenger' }]
+  @UI.selectionField: [{ position: 20 }]
+  passenger_name;
+
+  @UI.lineItem: [{ position: 40, label: 'Airline' }]
+  @UI.identification: [{ position: 40, label: 'Airline' }]
+  @UI.selectionField: [{ position: 30 }]
+  carrier_id;
+
+  @UI.lineItem: [{ position: 50, label: 'Flight' }]
+  @UI.identification: [{ position: 50, label: 'Flight' }]
+  connection_id;
+
+  @UI.lineItem: [{ position: 60, label: 'From' }]
+  @UI.identification: [{ position: 60, label: 'From' }]
+  airport_from_id;
+
+  @UI.lineItem: [{ position: 70, label: 'To' }]
+  @UI.identification: [{ position: 70, label: 'To' }]
+  airport_to_id;
+
+  @UI.lineItem: [{ position: 80, label: 'Date' }]
+  @UI.identification: [{ position: 80, label: 'Date' }]
+  flight_date;
+
+  @UI.hidden: true
+  boarding_url;
+
+  @UI.lineItem: [{ position: 90, label: 'Boarding pass', type: #WITH_URL, url: 'boarding_url' }]
+  @UI.identification: [{ position: 90, label: 'Boarding pass', type: #WITH_URL, url: 'boarding_url' }]
+  boarding_label;
+}
